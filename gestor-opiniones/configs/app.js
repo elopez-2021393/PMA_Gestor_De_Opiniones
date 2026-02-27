@@ -10,6 +10,8 @@ import { dbConnection } from './db.configuration.js';
 import { requestLimit } from './rateLimit.configuration.js';
 import { errorHandler } from '../middlewares/handle-errors.js';
 import userRoutes from '../src/users/user.routes.js';
+import publicationRoutes from '../src/publications/publication.routes.js';
+import commentRoutes from '../src/comments/comment.routes.js';
 
 const BASE_PATH = '/gestorOpiniones/v1';
 
@@ -24,7 +26,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use(`${BASE_PATH}/auth`, userRoutes);
-
+    app.use(`${BASE_PATH}/publications`, publicationRoutes);
     app.get(`${BASE_PATH}/health`, (req, res) => {
         res.status(200).json({
             status: 'Healthy',
