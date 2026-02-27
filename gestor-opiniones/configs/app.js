@@ -27,11 +27,13 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use(`${BASE_PATH}/auth`, userRoutes);
     app.use(`${BASE_PATH}/publications`, publicationRoutes);
+    app.use(`${BASE_PATH}/comments`, commentRoutes);
+
     app.get(`${BASE_PATH}/health`, (req, res) => {
         res.status(200).json({
             status: 'Healthy',
             timeStamp: new Date().toISOString(),
-            service: 'Gestor de Opiniones'
+            service: 'Gestor de Opiniones Server'
         });
     });
 

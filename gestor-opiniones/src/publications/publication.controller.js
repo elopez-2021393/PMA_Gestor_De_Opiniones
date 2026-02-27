@@ -1,4 +1,10 @@
-import { createPublication, getAllPublications, getPublicationById, updatePublication, deletePublication } from './publication.services.js';
+import {
+    createPublication,
+    getAllPublications,
+    getPublicationById,
+    updatePublication,
+    deletePublication
+} from './publication.services.js';
 
 export const create = async (req, res) => {
     try {
